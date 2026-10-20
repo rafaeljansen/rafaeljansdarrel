@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, lazy, Suspense, useTransition } from 'react';
-import Header from './components/header';
-import Footer from './components/footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import CyberCanvas from './components/cyberCanvas';
 import HitmarkerEffect from './components/Hitmarker';
 import MusicPlayer from './components/MusicPlayer';
