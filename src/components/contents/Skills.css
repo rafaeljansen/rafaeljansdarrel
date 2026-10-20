@@ -1,0 +1,141 @@
+.skills-container h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #fff;
+    animation: loadToRight 0.4s ease-out forwards;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    background: rgba(0, 240, 255, 0.05);
+    color: #00f0ff;
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.15);
+    opacity: 0;
+    animation: loadToRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger delay bertingkat untuk setiap tombol/tag agar meluncur ke kanan bergantian */
+.skill-tag:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.skill-tag:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.skill-tag:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.skill-tag:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.skill-tag:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.skill-tag:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.skill-tag:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+.skill-tag:nth-child(8) {
+    animation-delay: 0.45s;
+}
+
+.skill-tag:nth-child(9) {
+    animation-delay: 0.5s;
+}
+
+.skill-tag:nth-child(10) {
+    animation-delay: 0.55s;
+}
+
+.skill-tag:hover {
+    background: #00f0ff;
+    color: #030308;
+    box-shadow: 0 0 15px #00f0ff;
+    transform: translateX(4px);
+}
+
+@keyframes loadToRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.skill-tag {
+    background: rgba(0, 240, 255, 0.05);
+    color: #00f0ff;
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.15);
+
+    /* Animasi Sizing & Slide ke Kanan */
+    opacity: 0;
+    animation: expandSlideRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.skills-tags .skill-tag:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.skills-tags .skill-tag:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.skills-tags .skill-tag:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.skills-tags .skill-tag:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.skills-tags .skill-tag:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.skills-tags .skill-tag:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.skills-tags .skill-tag:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+.skills-tags .skill-tag:nth-child(8) {
+    animation-delay: 0.45s;
+}
+
+.skills-tags .skill-tag:nth-child(9) {
+    animation-delay: 0.5s;
+}
+
+.skills-tags .skill-tag:nth-child(10) {
+    animation-delay: 0.55s;
+}

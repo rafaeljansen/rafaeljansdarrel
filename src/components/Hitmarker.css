@@ -1,0 +1,76 @@
+.hitmarker-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.fps-hitmarker {
+    position: absolute;
+    width: 16px;
+    /* Ukuran diperkecil */
+    height: 16px;
+    transform: translate(-50%, -50%);
+    animation: hitmarkerAnim 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hit-line {
+    position: absolute;
+    background-color: #ff0055;
+    box-shadow: 0 0 6px #ff0055, 0 0 12px #ff0055;
+}
+
+/* Garis lebih pendek dan rapat membentuk huruf X */
+.top-left {
+    top: 1.5px;
+    left: 1.5px;
+    width: 6px;
+    height: 1.5px;
+    transform: rotate(45deg);
+    transform-origin: top left;
+}
+
+.top-right {
+    top: 1.5px;
+    right: 1.5px;
+    width: 6px;
+    height: 1.5px;
+    transform: rotate(-45deg);
+    transform-origin: top right;
+}
+
+.bottom-left {
+    bottom: 1.5px;
+    left: 1.5px;
+    width: 6px;
+    height: 1.5px;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+}
+
+.bottom-right {
+    bottom: 1.5px;
+    right: 1.5px;
+    width: 6px;
+    height: 1.5px;
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+}
+
+@keyframes hitmarkerAnim {
+    0% {
+        transform: translate(-50%, -50%) scale(0.6);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}

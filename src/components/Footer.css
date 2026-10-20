@@ -1,0 +1,11 @@
+.footer {
+    padding: 16px 30px;
+    border-top: 1px solid rgba(0, 240, 255, 0.15);
+    text-align: center;
+    font-size: 0.8rem;
+    color: #58657f;
+    background: rgba(3, 3, 8, 0.8);
+    margin-top: auto;
+    /* Mendorong footer persis ke batas paling bawah */
+    width: 100%;
+}

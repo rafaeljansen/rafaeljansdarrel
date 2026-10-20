@@ -1,0 +1,15 @@
+.content-area {
+    flex: 1;
+    
+    /* Padding lebih luas agar konten bernapas lega */
+    overflow-y: auto;
+}
+
+.content-area::-webkit-scrollbar {
+    width: 6px;
+}
+
+.content-area::-webkit-scrollbar-thumb {
+    background: #ff0055;
+    box-shadow: 0 0 12px #ff0055;
+}

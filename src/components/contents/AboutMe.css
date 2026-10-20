@@ -1,0 +1,86 @@
+/* Container Utama Menggunakan CSS Grid 2 Kolom */
+.about-grid-layout {
+    display: grid;
+    /* Kolom 1 (Foto): 240px | Kolom 2 (Konten): Sisa Ruang (1fr) */
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
+    /* Jarak bersih antara foto dan area konten */
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Kolom Grid 1: Foto Profil Mepet Kiri */
+.about-photo-column {
+    position: relative;
+    /* Menggunakan nilai negatif pada margin agar foto menjebol padding container & mentok kiri */
+    margin-left: -80px;
+    margin-top: -60px;
+    margin-bottom: -60px;
+    height: 85%;
+    width: 420px;
+    /* Lebar foto konsisten */
+    overflow: hidden;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+    /* box-shadow: 12px 0 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.2); */
+    z-index: 2;
+}
+
+.photo-grid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(1.1) contrast(1.05);
+}
+
+/* Kolom Grid 2: Area Konten Utama */
+.about-content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    z-index: 3;
+    padding-left: 16%;
+    padding-right: 8%;
+}
+
+/* Tombol Navigasi */
+.about-hud-nav {
+    display: flex;
+    gap: 16px;
+}
+
+
+
+/* Display Teks Informasi */
+.about-center-display {
+    width: 100%;
+    max-width: 1250px;
+}
+
+.center-text-box {
+    background: rgba(5, 5, 15, 0.88);
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    border-left: 4px solid #00f0ff;
+    padding: 32px 38px;
+    width: 100%;
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.2);
+    animation: expandSlideRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.center-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.25rem;
+    color: #ff0055;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+}
+
+.center-desc {
+    color: #8be9fd;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
