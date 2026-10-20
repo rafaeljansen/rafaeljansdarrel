@@ -84,3 +84,52 @@
     font-size: 1.05rem;
     line-height: 1.75;
 }
+
+/* --- TAMPILAN RESPONSIF MOBILE UNTUK ABOUT ME --- */
+@media (max-width: 768px) {
+
+    /* 1. Ubah grid utama menjadi 1 kolom ke bawah */
+    .about-grid-layout {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        height: auto !important;
+        overflow-y: auto !important;
+        padding: 20px 16px !important;
+    }
+
+    /* 2. Reset margin negatif desktop & buat foto di tengah atas */
+    .about-photo-column {
+        width: 100% !important;
+        max-width: 280px !important;
+        /* Batasi lebar maksimal foto di HP */
+        height: 300px !important;
+        /* Berikan tinggi proporsional */
+        margin: 0 auto !important;
+        /* Otomatis rata tengah secara horizontal */
+        grid-row: 1 !important;
+        /* Paksa berada di baris pertama (paling atas) */
+        border-radius: 20px !important;
+        /* Ubah border radius agar simetris di HP */
+    }
+
+    /* 3. Atur kolom konten agar berada tepat di bawah foto */
+    .about-content-column {
+        padding: 0 !important;
+        grid-row: 2 !important;
+        /* Berada di baris kedua */
+        text-align: center !important;
+        align-items: center !important;
+    }
+
+    /* 4. Pusatkan tombol navigasi */
+    .about-hud-nav {
+        justify-content: center !important;
+    }
+
+    /* 5. Ratakan teks di dalam kotak informasi */
+    .center-text-box {
+        padding: 20px 16px !important;
+        text-align: left !important;
+        /* Biar teks deskripsi tetap nyaman dibaca (bisa diubah ke center jika mau) */
+    }
+}

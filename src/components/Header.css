@@ -240,3 +240,90 @@
     background: rgba(0, 240, 255, 0.3);
     margin-bottom: 10px;
 }
+/* Sembunyikan .hex-code secara default di desktop */
+.hex-code {
+    display: none;
+}
+
+/* Pengaturan khusus Mobile */
+@media (max-width: 768px) {
+    .game-sidebar {
+        position: fixed !important;
+        bottom: 20px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: auto !important;
+        height: auto !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 8px 16px !important;
+        background: rgba(3, 3, 10, 0.95) !important;
+        border: 1px solid #00f0ff !important;
+        border-radius: 30px !important;
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.4) !important;
+        z-index: 1002;
+    }
+
+    /* Sembunyikan elemen desktop */
+    .game-logo-area,
+    .sidebar-footer-decor,
+    .toggle-hex-btn {
+        display: none !important;
+    }
+
+    .game-nav {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .nav-list-vertical {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+
+    /* Ubah tombol menu menjadi bentuk Hexagon */
+    .game-menu-btn {
+        width: 44px !important;
+        height: 44px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(3, 3, 10, 0.9) !important;
+        border: 1px solid #00f0ff !important;
+        color: #00f0ff !important;
+        font-family: 'Orbitron', sans-serif !important;
+        font-size: 0.75rem !important;
+        font-weight: bold;
+        /* Menggunakan gaya clip-path hexagon yang sama */
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%) !important;
+        transition: all 0.2s ease !important;
+    }
+
+    /* Sembunyikan teks panjang dan indikator panah */
+    .game-menu-btn .btn-text,
+    .game-menu-btn .btn-indicator {
+        display: none !important;
+    }
+
+    /* Tampilkan kode hexagon (01, 02, 03) */
+    .game-menu-btn .hex-code {
+        display: inline-block !important;
+    }
+
+    /* Efek Hover & Active */
+    .game-menu-btn:hover,
+    .game-menu-btn.active {
+        background: #ff0055 !important;
+        border-color: #ff0055 !important;
+        color: #030308 !important;
+        box-shadow: 0 0 12px #ff0055 !important;
+    }
+}

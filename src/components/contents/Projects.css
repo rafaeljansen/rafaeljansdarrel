@@ -1,125 +1,258 @@
 .projects-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    padding:120px
+    gap: 20px;
+    padding: 50px 56px;
 }
 
-.projects-container h2 {
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+.projects-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.6rem;
-    color: #fff;
-    
+    font-size: 1.2rem;
+    color: #ff0055;
+    letter-spacing: 1px;
 }
 
+.projects-count {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    color: #00f0ff;
+    left: 50%;
+}
+
+/* Grid Projects Default (Desktop: 2 Kolom x 2 Baris untuk 4 Card) */
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
 .project-card {
-    background: rgba(0, 240, 255, 0.03);
-    border: 1px solid rgba(0, 240, 255, 0.2);
-    padding: 16px;
+    background: rgba(5, 5, 15, 0.9);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-left: 3px solid #00f0ff;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    opacity: 0;
-    animation: expandSlideRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.project-card:nth-child(1) {
-    animation-delay: 0.15s;
-}
-
-.project-card:nth-child(2) {
-    animation-delay: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-4px) translateX(4px);
     border-color: #ff0055;
-    box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);
-    background: rgba(255, 0, 85, 0.03);
+    border-left-color: #ff0055;
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.3);
+    transform: translateY(-3px);
 }
 
-.project-media-container {
+/* Area Media (Gambar / Video) */
+.card-media-wrapper {
     position: relative;
     width: 100%;
-    height: 130px;
+    height: 160px;
     background: #000;
-    border: 1px solid rgba(0, 240, 255, 0.3);
     overflow: hidden;
 }
 
-/* Pembungkus Video dengan Akselerasi GPU (Anti-Lag) */
-.video-hover-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.video-hover-wrapper video {
+.card-media {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: translateZ(0);
-    /* Mendelegasikan render ke GPU */
-    will-change: transform;
+    transition: transform 0.4s ease;
 }
 
-.project-static-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translateZ(0);
+.project-card:hover .card-media {
+    transform: scale(1.05);
 }
 
-.hover-badge-preview {
+.media-overlay-tag {
     position: absolute;
-    bottom: 8px;
+    top: 8px;
     right: 8px;
-    background: rgba(3, 3, 8, 0.8);
+    background: rgba(3, 3, 10, 0.85);
+    border: 1px solid #00f0ff;
     color: #00f0ff;
-    border: 1px solid rgba(0, 240, 255, 0.4);
-    font-size: 0.65rem;
+    font-size: 0.6rem;
+    font-family: 'Share Tech Mono', monospace;
     padding: 2px 6px;
-    letter-spacing: 1px;
-    pointer-events: none;
-    transition: opacity 0.2s;
-    z-index: 2;
+    letter-spacing: 0.5px;
 }
 
-.video-hover-wrapper:hover .hover-badge-preview {
-    opacity: 0;
+/* Konten Deskripsi Card */
+.card-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
 }
 
-.project-card h3 {
+.card-tag {
+    font-size: 0.65rem;
+    color: #ff0055;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.95rem;
-    color: #00f0ff;
 }
 
-.project-card p {
+.card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.card-desc {
     font-size: 0.85rem;
     color: #8be9fd;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
-.project-tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+.card-action-btn {
     margin-top: auto;
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid #00f0ff;
+    color: #00f0ff;
+    padding: 6px 12px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.tech-mini-tag {
-    font-size: 0.7rem;
-    background: rgba(255, 0, 85, 0.1);
-    color: #ff0055;
-    border: 1px solid rgba(255, 0, 85, 0.3);
-    padding: 2px 8px;
+.card-action-btn:hover {
+    background: #ff0055;
+    border-color: #ff0055;
+    color: #030308;
+    box-shadow: 0 0 10px #ff0055;
+}
+
+/* Navigasi Pagination */
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 8px;
+}
+
+.page-num-btn,
+.page-nav-btn {
+    background: rgba(3, 3, 10, 0.9);
+    border: 1px solid #00f0ff;
+    color: #00f0ff;
+    font-family: 'Orbitron', sans-serif;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-num-btn.active {
+    background: #ff0055;
+    border-color: #ff0055;
+    color: #ffffff;
+    box-shadow: 0 0 10px #ff0055;
+}
+
+.page-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    border-color: #555577;
+    color: #555577;
+}
+
+/* ==========================================
+   TAMPILAN RESPONSIF MOBILE: 1 KOLOM VERTIKAL
+   ========================================== */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        /* Batasi 1 kolom vertikal */
+        gap: 16px !important;
+    }
+
+    .card-media-wrapper {
+        height: 180px !important;
+        /* Berikan area video/gambar yang pas di HP */
+    }
+}
+
+/* Tambahkan di bagian bawah Projects.css */
+
+/* Kontrol Pagination Cyberpunk */
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 8px;
+}
+
+.page-num-btn,
+.page-nav-btn {
+    background: rgba(3, 3, 10, 0.9);
+    border: 1px solid #00f0ff;
+    color: #00f0ff;
+    font-family: 'Orbitron', sans-serif;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-num-btn:hover,
+.page-nav-btn:not(:disabled):hover {
+    background: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+.page-num-btn.active {
+    background: #ff0055;
+    border-color: #ff0055;
+    color: #ffffff;
+    box-shadow: 0 0 12px #ff0055;
+}
+
+.page-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    border-color: #555577;
+    color: #555577;
+}
+
+/* Penyesuaian Pagination di Mobile */
+@media (max-width: 768px) {
+    .pagination-wrapper {
+        gap: 8px !important;
+    }
+
+    .page-num-btn,
+    .page-nav-btn {
+        padding: 6px 10px !important;
+        font-size: 0.7rem !important;
+    }
+        
+    .projects-count {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            color: #00f0ff;
+            left: 50%;
+            position: relative;
+        }
 }
