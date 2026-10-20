@@ -12,19 +12,18 @@
     justify-content: space-between;
     box-shadow: 10px 0 30px rgba(0, 0, 0, 0.8);
     overflow: visible;
-    /* Memungkinkan tombol toggle berada pas di garis batas */
     transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: width, padding;
 }
 
-/* Mode Sidebar Tertutup */
+/* Mode Sidebar Tertutup (Desktop) */
 .game-sidebar.collapsed {
     width: 90px;
     padding: 40px 12px;
     align-items: center;
 }
 
-/* Tombol Toggle Hexagon Melayang Tepat di Garis Batas Kanan */
+/* Tombol Toggle Hexagon Melayang */
 .toggle-hex-btn {
     position: absolute;
     right: -18px;
@@ -52,7 +51,6 @@
     transform: scale(1.15);
 }
 
-/* Animasi Rotasi Tanda Panah yang Lebih Mulus & Diakselerasi GPU */
 .hex-arrow-icon {
     display: inline-block;
     font-size: 0.75rem;
@@ -65,7 +63,6 @@
     transform: rotate(180deg) translateZ(0);
 }
 
-/* Mencegah Teks Patah/Wrapping saat Sidebar Menyusut */
 .logo-text-wrapper {
     white-space: nowrap;
     overflow: hidden;
@@ -201,58 +198,65 @@
     transform: translateX(0);
 }
 
-.hex-menu-btn {
-    width: 52px;
-    height: 52px;
-    background: rgba(0, 240, 255, 0.05);
-    border: 1px solid #00f0ff;
-    color: #00f0ff;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.9rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-}
-
-.hex-menu-btn:hover {
-    background: rgba(0, 240, 255, 0.2);
-    border-color: #00f0ff;
-    color: #ffffff;
-    box-shadow: 0 0 20px #00f0ff;
-    transform: scale(1.1);
-}
-
-.hex-menu-btn.active {
-    background: #ff0055;
-    border-color: #ff0055;
-    color: #030308;
-    box-shadow: 0 0 25px #ff0055;
-}
-
 .decor-line {
     height: 1px;
     background: rgba(0, 240, 255, 0.3);
     margin-bottom: 10px;
 }
 
-/* Sembunyikan .hex-code & .header-mobile-bar secara default di desktop */
+/* Sembunyikan .hex-code secara default di Desktop saat Expanded */
 .hex-code {
     display: none;
 }
 
+/* Ketika Sidebar Collapsed di Desktop: Tampilkan Tombol berbentuk Hexagon + Angka */
+.game-sidebar.collapsed .game-menu-btn {
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    justify-content: center;
+    background: rgba(0, 240, 255, 0.05);
+    border: 1px solid #00f0ff;
+    color: #00f0ff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+}
+
+.game-sidebar.collapsed .game-menu-btn .btn-text,
+.game-sidebar.collapsed .game-menu-btn .btn-indicator {
+    display: none;
+}
+
+.game-sidebar.collapsed .game-menu-btn .hex-code {
+    display: inline-block;
+}
+
+.game-sidebar.collapsed .game-menu-btn:hover {
+    background: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 20px #00f0ff;
+    transform: scale(1.1);
+}
+
+.game-sidebar.collapsed .game-menu-btn.active {
+    background: #ff0055;
+    border-color: #ff0055;
+    color: #030308;
+    box-shadow: 0 0 25px #ff0055;
+}
+
+/* Sembunyikan top header mobile secara default di desktop */
 .header-mobile-bar {
     display: none;
 }
 
-/* Pengaturan khusus Mobile */
+/* ==========================================
+   PENGATURAN KHUSUS MOBILE (<= 768px)
+   ========================================== */
 @media (max-width: 768px) {
 
-    /* 1. Header Mobile Bar melayang di Atas Layar dengan Efek Fade */
+    /* 1. Header Mobile Bar Melayang di Atas Layar dengan Efek Fade */
     .header-mobile-bar {
         display: flex;
         position: fixed;
@@ -265,7 +269,6 @@
         justify-content: center;
         padding: 0 20px;
 
-        /* Efek pudar (Fade): hitam pekat di atas pudar ke transparan ke bawah */
         background: linear-gradient(to bottom,
                 rgba(3, 3, 8, 0.95) 0%,
                 rgba(3, 3, 8, 0.7) 65%,
@@ -286,7 +289,7 @@
         margin: 0;
     }
 
-    /* 2. Floating Bottom Navbar (Tetap Sesuai Aslinya) */
+    /* 2. Floating Bottom Navbar */
     .game-sidebar {
         position: fixed !important;
         bottom: 20px !important;
@@ -328,7 +331,7 @@
         list-style: none !important;
     }
 
-    /* Ubah tombol menu menjadi bentuk Hexagon */
+    /* Format tombol Hexagon Mobile */
     .game-menu-btn {
         width: 44px !important;
         height: 44px !important;
@@ -341,19 +344,18 @@
         color: #00f0ff !important;
         font-family: 'Orbitron', sans-serif !important;
         font-size: 0.75rem !important;
-        font-weight: bold;
-        /* Menggunakan gaya clip-path hexagon yang sama */
+        font-weight: bold !important;
         clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%) !important;
         transition: all 0.2s ease !important;
     }
 
-    /* Sembunyikan teks panjang dan indikator panah */
+    /* Sembunyikan teks label & indikator panah */
     .game-menu-btn .btn-text,
     .game-menu-btn .btn-indicator {
         display: none !important;
     }
 
-    /* Tampilkan kode hexagon (01, 02, 03) */
+    /* Selalu tampilkan angka kode (.hex-code) di Mobile */
     .game-menu-btn .hex-code {
         display: inline-block !important;
     }
