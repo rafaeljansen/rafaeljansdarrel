@@ -52,27 +52,6 @@ export default function Projects() {
       }
     },
     {
-      id: 3,
-      title: 'MINECRAFT NEOFORGE MOD',
-      category: 'Java / Mixin Injections',
-      desc: 'Custom entity behavior mod allowing villagers and entities to sit on stairs with custom configs.',
-      type: 'image',
-      mediaUrl: 'https://images.unsplash.com/photo-1627856013091-fed6e4e30025?q=80&w=800&auto=format&fit=crop',
-      posterUrl: 'https://images.unsplash.com/photo-1627856013091-fed6e4e30025?q=80&w=800&auto=format&fit=crop',
-      fullDetails: {
-        role: 'Mod Developer',
-        techStack: ['Java', 'NeoForge 1.21.1', 'Fabric API', 'Mixin Framework', 'JSON Configs'],
-        features: [
-          'Java Bytecode manipulation via Mixin injections',
-          'Entity sitting logic on stair & slab blocks',
-          'Configurable sitting distance & entity blacklist via JSON',
-          'Multi-loader compatibility across NeoForge & Fabric'
-        ],
-        githubUrl: 'https://github.com/rafaelsorongan',
-        demoUrl: '#'
-      }
-    },
-    {
       id: 4,
       title: 'NATURAL LANGUAGE PROCESSING',
       category: 'Python / ML Dashboard',
