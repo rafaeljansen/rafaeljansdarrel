@@ -149,7 +149,7 @@ function App() {
           <div className={`right-panel-wrapper ${isPending ? 'pending-switch' : ''}`}>
             <main className="content-area">
               <Suspense fallback={<div className="async-loader">// LOADING NEURAL MODULE...</div>}>
-                {activeTab === 'about' && <AboutMe />}
+                {activeTab === 'about' && <AboutMe setActiveTab={handleTabChange} />}
                 {activeTab === 'projects' && <Projects />}
                 {activeTab === 'contact' && <Contact />}
               </Suspense>

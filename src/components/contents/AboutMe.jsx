@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import Typewriter from './Typewriter';
 import './AboutMe.css';
 
-function AboutMe() {
-  const [activeTab, setActiveTab] = useState('edu');
+// Terima prop setActiveTab dari App.jsx
+function AboutMe({ setActiveTab: setMainTab }) {
+  const [activeTab, setActiveTab] = useState('about');
 
   // Path foto profil kamu
   const profilePhoto = "me23.jpg";
 
   const contentData = {
-    edu: "Sarjana Komputer (S.Kom) — Teknik Informatika, Universitas Negeri Manado (UNIMA) dengan IPK 3.57. Berfokus pada metodologi Agile dan pengembangan game 3D.",
-    skill: "React JS, C#, PHP, Unity 3D Engine, NavMesh AI, Laravel, CodeIgniter 4, JavaScript (ES6+), Git & GitHub.",
-    exp: "Pengembangan game strategi 3D 'Mon War' dengan procedural world generation, serta pembuatan aplikasi web profesional untuk layanan instansi lokal."
+    about: `Halo, dengan Rafael di sini! Saya seorang programmer dan pengembang web, yang memiliki passion dalam menciptakan solusi digital dengan cara yang kreatif dan efisien. 
+    \n Saya menekuni dunia Rekayasa Perangkat Lunak sejak berada di sekolah dasar, sehingga saya memiliki cara berpikir komputasional yang kuat dengan kemampuan ini saya dapat selalu beradaptasi dengan cepat terhadap perubahan teknologi.
+    \nSaya selalu menyukai hal keren yang saya buat dapat digunakan menyelesaikan masalah. Selain itu, saya menyukai tantangan baru dan mengeksplorasi hal-hal keren seputar teknologi dan rekayasa perangkat Lunak. Cek project saya>> `
   };
 
   return (
@@ -23,39 +24,40 @@ function AboutMe() {
 
       {/* Kolom Grid 2: Area Konten Utama */}
       <div className="about-content-column">
-        {/* Tombol Navigasi yang Konsisten dengan Sidebar (game-menu-btn) */}
+        {/* Tombol Navigasi */}
         <div className="about-hud-nav">
           <button 
-            className={`game-menu-btn ${activeTab === 'edu' ? 'active' : ''}`}
-            onClick={() => setActiveTab('edu')}
+            className={`game-menu-btn ${activeTab === 'about' ? 'active' : ''}`}
+            onClick={() => setActiveTab('about')}
           >
             <span className="btn-indicator">&gt;</span>
-            <span className="btn-text">EDU</span>
-          </button>
-          
-          <button 
-            className={`game-menu-btn ${activeTab === 'skill' ? 'active' : ''}`}
-            onClick={() => setActiveTab('skill')}
-          >
-            <span className="btn-indicator">&gt;</span>
-            <span className="btn-text">SKILL</span>
-          </button>
-          
-          <button 
-            className={`game-menu-btn ${activeTab === 'exp' ? 'active' : ''}`}
-            onClick={() => setActiveTab('exp')}
-          >
-            <span className="btn-indicator">&gt;</span>
-            <span className="btn-text">EXP</span>
+            <span className="btn-text">About Me</span>
           </button>
         </div>
 
         {/* Display Teks Informasi */}
         <div className="about-center-display" key={activeTab}>
           <div className="center-text-box">
-            <h3 className="center-title">// {activeTab.toUpperCase()} DOSSIER</h3>
+            <h3 className="center-title">// {activeTab.toUpperCase()} ME</h3>
             <p className="center-desc">
-              <Typewriter text={contentData[activeTab]} speed={10} />
+              <Typewriter text={contentData[activeTab]} speed={10}
+              showWhenIsDone={
+
+              <button 
+                type="button"
+                className="cyber-redirect-link"
+                onClick={() => setMainTab('projects')}
+              >
+                PROJECTS &gt;
+              </button>
+
+
+              }
+              
+              />           
+             
+              
+              
             </p>
           </div>
         </div>
