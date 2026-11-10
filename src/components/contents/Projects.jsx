@@ -14,8 +14,8 @@ export default function Projects() {
       category: '3D Game / Unity C#',
       desc: 'Procedural world generation strategy game built using Agile methodology for undergraduate thesis.',
       type: 'video',
-      mediaUrl: 'https://assets.mixkit.co/videos/preview/mixkit-game-animation-of-a-robot-character-42935-large.mp4',
-      posterUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop',
+      mediaUrl: 'https://drive.google.com/file/d/1DVoHaZxdNbA229m20MRqSBGwxOf_ad1v/view?usp=drive_link',
+      posterUrl: 'pr2.png',
       // Detail tambahan yang muncul di dalam Modal
       fullDetails: {
         role: 'Lead Game Developer & System Architect',
@@ -26,7 +26,7 @@ export default function Projects() {
           'NavMesh AI navigation for autonomous enemy waves',
           'Agile development iteration and unit testing'
         ],
-        githubUrl: 'https://github.com/rafaelsorongan',
+        githubUrl: 'https://github.com/rafaeljansen/Mon-War-Project',
         demoUrl: '#'
       }
     },
