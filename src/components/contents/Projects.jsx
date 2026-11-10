@@ -48,7 +48,7 @@ export default function Projects() {
           'SEO optimization and meta tags for better search engine visibility'
         ],
         githubUrl: 'https://elsoft.web.id',
-        demoUrl: '#'
+        demoUrl: 'https://elsoft.web.id'
       }
     }
   ];
