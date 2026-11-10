@@ -42,10 +42,10 @@ export default function Projects() {
         role: 'Full-Stack Web Developer',
         techStack: ['Laravel', 'CodeIgniter 4', 'PHP', 'MySQL', 'Bootstrap', 'JavaScript'],
         features: [
-          'Dynamic content management system (CMS)',
-          'Role-based access control (RBAC) & authentication',
-          'Institutional service portal for public access in Tomohon',
-          'Responsive UI with custom dashboard analytics'
+          'Responsive UI with custom dashboard analytics',
+          'security captcha and input validation for form submissions',
+          'animation effects and interactive elements for better user experience',
+          'SEO optimization and meta tags for better search engine visibility'
         ],
         githubUrl: 'https://elsoft.web.id',
         demoUrl: '#'
