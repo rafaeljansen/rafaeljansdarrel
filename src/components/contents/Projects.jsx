@@ -36,8 +36,8 @@ export default function Projects() {
       category: 'Web App / Laravel & PHP',
       desc: 'Website showcase projects dan penyediaan layanan jasa Freelance IT.',
       type: 'image',
-      mediaUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop',
-      posterUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop',
+      mediaUrl: 'pr1.png',
+      posterUrl: 'pr1.png',
       fullDetails: {
         role: 'Full-Stack Web Developer',
         techStack: ['Laravel', 'CodeIgniter 4', 'PHP', 'MySQL', 'Bootstrap', 'JavaScript'],
@@ -48,27 +48,6 @@ export default function Projects() {
           'Responsive UI with custom dashboard analytics'
         ],
         githubUrl: 'https://elsoft.web.id',
-        demoUrl: '#'
-      }
-    },
-    {
-      id: 4,
-      title: 'NATURAL LANGUAGE PROCESSING',
-      category: 'Python / ML Dashboard',
-      desc: 'Machine learning sentiment analysis visualizer using Random Forest, SVM, XGBoost, and Streamlit.',
-      type: 'image',
-      mediaUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
-      posterUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
-      fullDetails: {
-        role: 'ML Engineer & Data Analyst',
-        techStack: ['Python', 'Scikit-Learn', 'Pandas', 'XGBoost', 'Streamlit', 'Seaborn'],
-        features: [
-          'Text preprocessing, stopword removal, and TF-IDF vectorization',
-          'Comparative model analysis (Random Forest, SVM, XGBoost)',
-          'Interactive Streamlit web dashboard visualizer',
-          'Real-time text input classification & probability metrics'
-        ],
-        githubUrl: 'https://github.com/rafaelsorongan',
         demoUrl: '#'
       }
     }
