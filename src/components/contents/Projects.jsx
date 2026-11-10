@@ -40,7 +40,7 @@ export default function Projects() {
       posterUrl: 'pr1.png',
       fullDetails: {
         role: 'Full-Stack Web Developer',
-        techStack: ['Laravel', 'CodeIgniter 4', 'PHP', 'MySQL', 'Bootstrap', 'JavaScript'],
+        techStack: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript', 'React JS'],
         features: [
           'Responsive UI with custom dashboard analytics',
           'security captcha and input validation for form submissions',
