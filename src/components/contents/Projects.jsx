@@ -27,7 +27,7 @@ export default function Projects() {
           'Agile development iteration and unit testing'
         ],
         githubUrl: 'https://github.com/rafaeljansen/Mon-War-Project',
-        demoUrl: '#'
+        demoUrl: 'https://drive.google.com/file/d/1DVoHaZxdNbA229m20MRqSBGwxOf_ad1v/view?usp=drive_link'
       }
     },
     {
