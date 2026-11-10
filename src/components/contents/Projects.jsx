@@ -32,9 +32,9 @@ export default function Projects() {
     },
     {
       id: 2,
-      title: 'WEB ELSOFT & INSTANSI',
+      title: 'ELSOFT PROJECTS',
       category: 'Web App / Laravel & PHP',
-      desc: 'Custom enterprise web application and institutional dynamic portal services.',
+      desc: 'Website showcase projects dan penyediaan layanan jasa Freelance IT.',
       type: 'image',
       mediaUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop',
       posterUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop',
@@ -47,7 +47,7 @@ export default function Projects() {
           'Institutional service portal for public access in Tomohon',
           'Responsive UI with custom dashboard analytics'
         ],
-        githubUrl: 'https://github.com/rafaelsorongan',
+        githubUrl: 'https://elsoft.web.id',
         demoUrl: '#'
       }
     },
